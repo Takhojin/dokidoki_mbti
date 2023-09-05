@@ -1,17 +1,22 @@
-import { AppDataSource } from "./data-source";
+import { AppDataSource } from "./models/data-source";
 import fastify from "fastify";
+import { config } from "dotenv";
+config();
 
 const server = fastify();
-
+server.get("/", async (request, reply) => {
+  return "Hi !! we are GaeBackSoo !! ";
+});
 server.get("/ping", async (request, reply) => {
-  return "pong!!!!\n";
+  return "pong! You're Server health Good ! 😃";
 });
 
 AppDataSource.initialize()
   .then(() => {
     console.log("Database initialized successfully.");
-
-    server.listen({ port: 8080 }, (err, address) => {
+    const port = parseInt(process.env.PORT);
+    const host = process.env.HOST;
+    server.listen({ port, host }, (err, address) => {
       if (err) {
         console.error(err);
         process.exit(1);
