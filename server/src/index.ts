@@ -5,7 +5,7 @@ config();
 
 const server = fastify();
 server.get("/", async (request, reply) => {
-  return "Hi !! we are GaeBackSoo !! ";
+  return "Hi ! we are GaeBackSoo !! ";
 });
 server.get("/ping", async (request, reply) => {
   return "pong! You're Server health Good ! 😃";
