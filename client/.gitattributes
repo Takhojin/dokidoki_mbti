@@ -1,0 +1,4 @@
+*.h text=auto
+*.cpp text=auto*
+*.txt text=auto
+.gitignore -text
