@@ -1,4 +1,4 @@
-import { AppDataSource } from "./models/data-source";
+import { AppDataSource } from "./plugins/data-source";
 import fastify from "fastify";
 import { config } from "dotenv";
 config();
