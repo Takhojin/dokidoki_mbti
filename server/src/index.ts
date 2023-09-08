@@ -1,20 +1,30 @@
-import { AppDataSource } from "./data-source"
-import { User } from "./entity/User"
+import { AppDataSource } from "./models/data-source";
+import fastify from "fastify";
+import { config } from "dotenv";
+config();
 
-AppDataSource.initialize().then(async () => {
+const server = fastify();
+server.get("/", async (request, reply) => {
+  return "Hi ! we are GaeBackSoo !! ";
+});
+server.get("/ping", async (request, reply) => {
+  return "pong! You're Server health Good ! 😃";
+});
 
-    console.log("Inserting a new user into the database...")
-    const user = new User()
-    user.firstName = "Timber"
-    user.lastName = "Saw"
-    user.age = 25
-    await AppDataSource.manager.save(user)
-    console.log("Saved a new user with id: " + user.id)
-
-    console.log("Loading users from the database...")
-    const users = await AppDataSource.manager.find(User)
-    console.log("Loaded users: ", users)
-
-    console.log("Here you can setup and run express / fastify / any other framework.")
-
-}).catch(error => console.log(error))
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Database initialized successfully.");
+    const port = parseInt(process.env.PORT);
+    const host = process.env.HOST;
+    server.listen({ port, host }, (err, address) => {
+      if (err) {
+        console.error(err);
+        process.exit(1);
+      }
+      console.log(`Server listening at ${address}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Error initializing database:", error);
+    process.exit(1);
+  });
