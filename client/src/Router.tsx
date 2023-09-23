@@ -8,6 +8,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Web />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </BrowserRouter>
   );
