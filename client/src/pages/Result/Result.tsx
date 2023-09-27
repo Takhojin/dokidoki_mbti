@@ -3,9 +3,9 @@ import Explanation from './components/Explanation';
 import { Character } from '@/types/mbtiCharacter';
 
 const Result = () => {
-  const [myMbtiCharacter, setMyMbtiCharacter] = useState<Character | null>(
-    null,
-  );
+  const [myMbtiCharacter, setMyMbtiCharacter] = useState<
+    Character | null | undefined
+  >(null);
 
   useEffect(() => {
     const fetchMbtiCharacter = async () => {

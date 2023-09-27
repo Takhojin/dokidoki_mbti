@@ -1,17 +1,13 @@
 import React, { FC } from 'react';
 import CombinationCard from './CombinationCard';
+import { Character } from '@/types/mbtiCharacter';
 
 interface ExplanationProps {
-  myMbtiCharacter: {
-    mbti: string;
-    character: string[];
-  } | null;
+  myMbtiCharacter: Character | null | undefined;
 }
 
 const Explanation: FC<ExplanationProps> = ({ myMbtiCharacter }) => {
   const mbtiCharacters = myMbtiCharacter?.character;
-
-  console.log('@', myMbtiCharacter);
 
   return (
     <div className="mb-4 flex flex-col overflow-y-scroll scrollbar-thin scrollbar-thumb-olive-green scrollbar-thumb-rounded-xl h-5/6">
