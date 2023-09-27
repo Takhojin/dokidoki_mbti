@@ -14,7 +14,7 @@ const Result = () => {
         const data = await response.json();
         setMyMbtiCharacter(data);
       } catch (error) {
-        console.log('에러는 = ', error);
+        console.log(error);
       }
     };
 
@@ -23,8 +23,8 @@ const Result = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="p-2 border-4 border-olive-green rounded-2xl w-1/3 h-90%">
-        <div className="border-2 h-1/6">nav bar</div>
+      <div className="flex flex-col justify-between p-2 border-4 border-olive-green rounded-2xl w-1/3 h-90%">
+        <div className="border-2 h-1/6 mb-4">nav bar</div>
         <Explanation myMbtiCharacter={myMbtiCharacter} />
       </div>
     </div>
