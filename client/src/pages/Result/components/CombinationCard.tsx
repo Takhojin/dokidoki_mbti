@@ -11,11 +11,11 @@ interface CombiProps {
 
 const CombinationCard: FC<CombiProps> = ({ icon, mbti, goodOrBad, imgSrc }) => {
   return (
-    <div className="flex flex-col items-center border-2 border-black w-1/2 h-1/2">
+    <div className="flex flex-col items-center w-1/2 leading-loose">
       <FontAwesomeIcon icon={icon} size="lg" className="text-red-500" />
       <p>{goodOrBad}</p>
       <p className="text-xl font-semibold">{mbti}</p>
-      <img src={imgSrc} className="h-full" alt="mbtiImg" />
+      <img src={imgSrc} className="h-2/3" alt="mbtiImg" />
     </div>
   );
 };

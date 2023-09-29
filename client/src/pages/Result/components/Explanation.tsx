@@ -33,16 +33,18 @@ const Explanation: FC<ExplanationProps> = ({ myMbtiCharacter }) => {
         </p>
         <ul className="pt-4">
           {(mbtiCharacters === null || mbtiCharacters?.length === 0) && (
-            <li>"다시 한 번 검사를 해보는 건 어떨까요?"</li>
+            <li>"결과가 없습니다"</li>
           )}
           {mbtiCharacters !== null &&
             mbtiCharacters !== undefined &&
             mbtiCharacters.length > 0 &&
             mbtiCharacters?.map(character => (
-              <li className="font-semibold">*&nbsp;{character}</li>
+              <li className="font-semibold leading-loose">
+                *&nbsp;{character}
+              </li>
             ))}
         </ul>
-        <div className="pt-10 flex justify-between h-1/2">
+        <div className="pt-20 flex h-96">
           <CombinationCard
             icon={heart}
             mbti="ESTJ"
@@ -57,6 +59,12 @@ const Explanation: FC<ExplanationProps> = ({ myMbtiCharacter }) => {
           />
         </div>
       </main>
+      <div className="flex items-center px-6 pt-20 pb-12">
+        <div className="flex-1 border-t-2 border-gray" />
+        <p className="px-2 text-xl font-semibold">친구에게 공유하기</p>
+        <div className="flex-1 border-t-2 border-gray" />
+      </div>
+      <div className="text-center">친구 공유 아이콘</div>
     </div>
   );
 };
