@@ -13,12 +13,17 @@ const Explanation: FC<ExplanationProps> = ({ myMbtiCharacter }) => {
 
   return (
     <div className="mb-4 flex flex-col overflow-y-scroll scrollbar-thin scrollbar-thumb-olive-green scrollbar-thumb-rounded-xl h-5/6">
-      <header className="pt-4 flex flex-col justify-center items-center">
+      <header className="pt-4 flex flex-col justify-center items-center leading-loose">
         <p className="text-sm">
           <span className="text-xl font-semibold">이경진</span>&nbsp;&nbsp;님의
           유형은
         </p>
-        <p>호기심 많은 예술가,&nbsp;성인군자형</p>
+        <p>
+          호기심 많은 예술가,
+          <span className="text-lg text-olive-green font-semibold">
+            &nbsp;성인군자형
+          </span>
+        </p>
         <p className="text-2xl font-semibold">ISFP</p>
         <img
           src="/images/Components/Result/isfp.PNG"
