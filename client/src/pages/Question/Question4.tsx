@@ -7,15 +7,15 @@ type SelectedResponse = {
   [questionId: number]: number; // 각 문항 ID에 대한 응답 번호.
 };
 
-const Question3: FunctionComponent = () => {
+const Question4: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const handleBeforeClick = () => {
-    navigate('/question2');
+    navigate('/question3');
   };
 
   const handleNextClick = () => {
-    navigate('/question4');
+    navigate('/result');
   };
 
   // 'selected' 상태 초기화를 위한 타입 지정.
@@ -49,8 +49,8 @@ const Question3: FunctionComponent = () => {
   const renderQuestions = () => {
     // questions 배열에서 6번째부터 10번째까지의 질문 데이터만 가져와 렌더링합니다.
     // 배열 인덱싱은 0부터 시작하므로, 5부터 10까지가 실제로는 6번째부터 10번째에 해당합니다.
-    return questions.slice(10, 15).map((question, index) => {
-      const questionId = index + 11; // 질문 ID를 6부터 시작하도록 설정합니다.
+    return questions.slice(15, 20).map((question, index) => {
+      const questionId = index + 16; // 질문 ID를 6부터 시작하도록 설정합니다.
 
       return (
         <div
@@ -113,4 +113,4 @@ const Question3: FunctionComponent = () => {
   );
 };
 
-export default Question3;
+export default Question4;
