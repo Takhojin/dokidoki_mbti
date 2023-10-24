@@ -5,7 +5,7 @@ const Main: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const handleStartClick = () => {
-    navigate('/question');
+    navigate('/question1');
   };
   return (
     <div className="flex justify-center items-center min-h-screen ">
