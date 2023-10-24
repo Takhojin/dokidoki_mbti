@@ -7,15 +7,11 @@ type SelectedResponse = {
   [questionId: number]: number; // 각 문항 ID에 대한 응답 번호.
 };
 
-const Question1: FunctionComponent = () => {
+const Question2: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const handleBeforeClick = () => {
-    navigate('/');
-  };
-
-  const handleNextClick = () => {
-    navigate('/question2');
+    navigate('/question1');
   };
 
   // 'selected' 상태 초기화를 위한 타입 지정.
@@ -47,9 +43,10 @@ const Question1: FunctionComponent = () => {
 
   // 문항들을 렌더링하는 함수를 수정합니다.
   const renderQuestions = () => {
-    // questions 배열에서 질문 데이터를 가져와 렌더링합니다.
-    return questions.slice(0, 5).map((question, index) => {
-      const questionId = index + 1; // 질문 ID를 1부터 시작하도록 설정합니다.
+    // questions 배열에서 6번째부터 10번째까지의 질문 데이터만 가져와 렌더링합니다.
+    // 배열 인덱싱은 0부터 시작하므로, 5부터 10까지가 실제로는 6번째부터 10번째에 해당합니다.
+    return questions.slice(5, 10).map((question, index) => {
+      const questionId = index + 6; // 질문 ID를 6부터 시작하도록 설정합니다.
 
       return (
         <div
@@ -100,10 +97,7 @@ const Question1: FunctionComponent = () => {
           >
             이전
           </button>
-          <button
-            className="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-400"
-            onClick={handleNextClick}
-          >
+          <button className="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-400">
             다음
           </button>
         </div>
@@ -112,4 +106,4 @@ const Question1: FunctionComponent = () => {
   );
 };
 
-export default Question1;
+export default Question2;
